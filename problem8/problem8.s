@@ -39,8 +39,7 @@ inner_loop:
     lea (%r12, %r13), %rsi # Load the address of the next digit
     cmp $input_end, %rsi   # Check if the address is valid
     jge done               # If not, the process is complete
-    xor %rdx, %rdx         # Reset the upper bits of the divisor
-    xor %rax, %rax         # Reset the lower bits of the divisor
+    xor %rax, %rax         # Reset the factor
     mov (%rsi), %al        # Load the next digit
     sub $'0', %al          # Convert from ASCII to integer
     mul %r14               # Multiply

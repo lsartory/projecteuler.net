@@ -59,7 +59,6 @@ loop1:
     jle done
     mov %r12, %r13
 loop2:
-    xor %rdx, %rdx
     mov %r12, %rax
     mul %r13
     # Skip if this product is smaller than the biggest palindrome found so far
