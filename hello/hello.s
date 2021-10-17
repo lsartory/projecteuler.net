@@ -20,15 +20,15 @@ _start:
     call print
 
     # Initialize loop
-    mov $-5, %r12
+    mov $-15, %r12
 loop:
     mov %r12, %rax
     call print_int
     call print_endl
 
-    # Loop up to five
+    # Loop up to fifteen
     inc %r12
-    cmp $5, %r12
+    cmp $15, %r12
     jle loop
 
     # Exit the program

@@ -1,0 +1,17 @@
+AS=as
+LD=ld
+LDFLAGS=-nostdlib
+
+OBJS=hello_aarch64.o ../utils/utils_print_aarch64.o
+TARGET=hello
+
+all: $(TARGET)
+
+.s.o:
+	$(AS) $(CFLAGS) $^ -o $@
+
+hello: $(OBJS)
+	$(LD) $(LDFLAGS) $^ -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
